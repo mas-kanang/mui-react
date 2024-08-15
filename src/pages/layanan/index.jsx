@@ -21,8 +21,8 @@ const Page = ({ data }) => {
         {data.map((item) => {
           return (
             <Box key={item.id} onClick={() => router.push(`/layanan/${item.id}`)}>
-              <Typography>{item.namaLayanan}</Typography>
-              <Typography>{item.keterangan}</Typography>
+              <Typography>{item.nama}</Typography>
+              <Typography>{item.deskripsi}</Typography>
             </Box>
           );
         })}
@@ -37,10 +37,10 @@ export default Page;
 
 export async function getStaticProps() {
   const res = await fetch(process.env.LAYANAN);
-  const datausers = await res.json();
+  const data1 = await res.json();
   return {
     props: {
-      data: datausers,
+      data: data1.data.data,
     },
   };
 }

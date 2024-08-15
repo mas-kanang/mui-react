@@ -1,13 +1,16 @@
+import { Box } from "@mui/material";
+import { useRouter } from "next/router";
+
 export default function LayananDetail({ data }) {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <Layout pageTitle="Post Detail">
+    <Box pageTitle="Post Detail">
       <p>{data.name}</p>
       <p>{data.email}</p>
       <p>{data.phone}</p>
       <p>{data.website}</p>
-    </Layout>
+    </Box>
   );
 }
 
